@@ -3,7 +3,37 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "SuaveJWT", "SuaveJWT\SuaveJWT.fsproj", "{E29389DB-261C-44A8-8B50-BE858D167331}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Suave.Audience1", "Suave.Audience1\Suave.Audience1.fsproj", "{EE9A6ECA-C84E-496D-82FA-E793851DFA61}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Suave.Audience2", "Suave.Audience2\Suave.Audience2.fsproj", "{F6A2F044-7F7E-4256-80A6-B09BA5446698}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "SuaveJwt.AuthServerHost", "SuaveJwt.AuthServerHost\SuaveJwt.AuthServerHost.fsproj", "{B1FB31EE-6E0F-4A62-8AC8-8F4458A1B316}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E29389DB-261C-44A8-8B50-BE858D167331}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E29389DB-261C-44A8-8B50-BE858D167331}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E29389DB-261C-44A8-8B50-BE858D167331}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E29389DB-261C-44A8-8B50-BE858D167331}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE9A6ECA-C84E-496D-82FA-E793851DFA61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE9A6ECA-C84E-496D-82FA-E793851DFA61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE9A6ECA-C84E-496D-82FA-E793851DFA61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE9A6ECA-C84E-496D-82FA-E793851DFA61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6A2F044-7F7E-4256-80A6-B09BA5446698}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6A2F044-7F7E-4256-80A6-B09BA5446698}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6A2F044-7F7E-4256-80A6-B09BA5446698}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6A2F044-7F7E-4256-80A6-B09BA5446698}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1FB31EE-6E0F-4A62-8AC8-8F4458A1B316}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1FB31EE-6E0F-4A62-8AC8-8F4458A1B316}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1FB31EE-6E0F-4A62-8AC8-8F4458A1B316}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1FB31EE-6E0F-4A62-8AC8-8F4458A1B316}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
