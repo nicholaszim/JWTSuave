@@ -1,8 +1,11 @@
-﻿open Suave
-open AudienceStorage
+﻿open Suave.Web
 open AuthServer
-open System
 open JwtToken
+open Secure
+open System
+open Suave.Http
+open Encodings
+open IdentityStore
 
 [<EntryPoint>]
 let main argv = 
@@ -16,11 +19,11 @@ let main argv =
     }
 
     let identityStore = {
-        getClaims = IdentityStore.getCleims
+        getClaims = IdentityStore.getClaims
         isValidCredentials = IdentityStore.isValidCredentials
         getSecurityKey = KeyStore.securityKey
         getSigningCredentials = KeyStore.hmacSha256
     }
-    let audienceWebPat' = audienceWebPart authrizationServerConfig identityStore
-    startWebServer defaultConfig audienceWebPat'
+    let audienceWebPart' = audienceWebPart authorizationServerConfig identityStore
+    startWebServer defaultConfig audienceWebPart'
     0

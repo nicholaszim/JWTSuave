@@ -7,4 +7,5 @@ let securityKey sharedKey : SecurityKey =
     new InMemorySymmetricSecurityKey(symmetryKey) :> SecurityKey
 
 let hmacSha256 secretKey =
-    new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256Signature, SecurityAlgorithms.Sha256Digest)
+        //new Microsoft.IdentityModel.Tokens.SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256Signature)
+        new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256Signature, SecurityAlgorithms.Sha256Digest)
