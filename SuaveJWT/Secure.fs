@@ -13,6 +13,10 @@ type JwtConfig = {
     ClientId : string
 }
 
+type AuthrizationResult =
+    | Authorized
+    | UnAuthorized of string
+
 let jwtAuthenticate jwtConfig webpart (ctx: HttpContext) =
     let updateContextWithClaims claims =
         {
@@ -31,3 +35,25 @@ let jwtAuthenticate jwtConfig webpart (ctx: HttpContext) =
         | Choice1Of2 claims -> webpart (updateContextWithClaims claims)
         | Choice2Of2 err -> FORBIDDEN err ctx
     | _ -> BAD_REQUEST "Invalid Request. Provide both clientid and token" ctx
+
+let jwtAuthorize jwtConfig authorizeUser webpart =
+    let getClaims (ctx: HttpContext) =
+        let userState = ctx.userState
+        if userState.ContainsKey("Claims") then
+            match userState.Item "Claims" with
+            | :? (Claim seq) as claims -> Some claims
+            | _ -> None
+        else
+            None
+    let authorize httpContext =
+        match getClaims httpContext with
+        | Some claims ->
+            async {
+                let! authrizationresult = authorizeUser claims
+                match authrizationresult with
+                | Authorized -> return! webpart httpContext
+                | UnAuthorized err -> return! FORBIDDEN err httpContext
+            }
+        | None -> FORBIDDEN "Claims not found" httpContext
+
+    jwtAuthenticate jwtConfig authorize
